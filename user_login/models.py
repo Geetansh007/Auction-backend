@@ -34,17 +34,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
-    # Add related_name arguments to avoid conflicts
+    
     groups = models.ManyToManyField(
         Group,
-        related_name='user_login_user_set',  # Add a unique related_name
+        related_name='user_login_user_set',  
         blank=True,
         help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
         related_query_name='user_login_user',
     )
     user_permissions = models.ManyToManyField(
         Permission,
-        related_name='user_login_user_set',  # Add a unique related_name
+        related_name='user_login_user_set',  
         blank=True,
         help_text='Specific permissions for this user.',
         related_query_name='user_login_user',
