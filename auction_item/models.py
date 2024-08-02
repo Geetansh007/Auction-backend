@@ -1,3 +1,4 @@
+# auction_items/models.py
 from django.db import models
 import uuid
 from user_login.models import User, Celebrity
